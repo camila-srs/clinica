@@ -1,0 +1,39 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a  
+      class="nav-link" 
+      [class.active]="monitorLink === 'cadastro'" 
+      (click)="monitorLink = 'cadastro'"
+      href="#">
+          CADASTRO
+      </a> 
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" 
+      [class.active]="monitorLink === 'lista'"
+      (click)="monitorLink = 'lista'"
+      href="#">
+        LISTA
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+      [class.active]="monitorLink === 'vincularEstagiarios'"
+      (click)="monitorLink = 'vincularEstagiarios'"
+      href="#"
+      >
+     VICULAR ESTAGIÁRIOS
+    </a>
+    </li>
+  </ul>
+  <div [ngSwitch] = "monitorLink">
+    <div *ngSwitchCase="'cadastro'">
+     <app-cadastro-orientador></app-cadastro-orientador>
+    </div>
+    <div *ngSwitchCase="'lista'">
+     <app-lista-orientador></app-lista-orientador>
+    </div>
+    <div *ngSwitchCase="'vincularEstagiarios'">
+      <app-vincular></app-vincular>
+    </div>
+  </div>

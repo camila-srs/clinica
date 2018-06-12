@@ -1,0 +1,37 @@
+<ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" [class.active] = "menuLink=== home" 
+      (click)="menuLink='home'"
+       href="#">HOME</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [class.active] = "menuLink=== estagiario" 
+        (click)="menuLink='estagiario'" 
+        href="#">ESTÁGIARIOS</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [class.active] = "menuLink=== orientador" 
+        (click)="menuLink='orientador'" 
+        href="#">ORIENTADORES</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [class.active] = "menuLink=== consulta" 
+        (click)="menuLink='consulta'"
+         href="#">CONSULTAS</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [class.active] = "menuLink=== relatorio" 
+        (click)="menuLink='relatorio'" 
+        href="#">RELATÓRIOS</a>
+    </li>
+  </ul>
+
+  <div [ngSwitch]="menuLink">
+        <div *ngSwitchCase="'estagiario'">
+            <app-menu-estagiario></app-menu-estagiario>
+        </div>
+        <div *ngSwitchCase="'orientador'">
+            <app-menu-orientador></app-menu-orientador>
+        </div>
+
+  </div>
